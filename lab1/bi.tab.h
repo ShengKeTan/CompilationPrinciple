@@ -41,14 +41,33 @@
    enum yytokentype {
      INT = 258,
      ID = 259,
-     LP = 260,
-     RP = 261,
-     PLUS = 262,
-     MINUS = 263,
-     STAR = 264,
-     DIV = 265,
-     ASSIGNOP = 266,
-     UMINUS = 267
+     RELOP = 260,
+     TYPE = 261,
+     FLOAT = 262,
+     CHAR = 263,
+     STURCT = 264,
+     LP = 265,
+     RP = 266,
+     LC = 267,
+     RC = 268,
+     SEMI = 269,
+     COMMA = 270,
+     PLUS = 271,
+     MINUS = 272,
+     STAR = 273,
+     DIV = 274,
+     ASSIGNOP = 275,
+     AND = 276,
+     OR = 277,
+     NOT = 278,
+     IF = 279,
+     ELSE = 280,
+     WHILE = 281,
+     RETURN = 282,
+     ADDADD = 283,
+     SUBSUB = 284,
+     UMINUS = 285,
+     LOWER_THEN_ELSE = 286
    };
 #endif
 
@@ -59,16 +78,19 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 11 "exp.y"
+#line 15 "bi.y"
 
-	int type_int;
-	char type_id[32];
-	struct Exp *pExp;
+	int    type_int;
+	float  type_float;
+	char   type_char[32];
+	char   type_struct[32];
+	char   type_id[32];
+	struct node *ptr;
 
 
 
 /* Line 1676 of yacc.c  */
-#line 72 "exp.tab.h"
+#line 94 "bi.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -77,4 +99,18 @@ typedef union YYSTYPE
 
 extern YYSTYPE yylval;
 
+#if ! defined YYLTYPE && ! defined YYLTYPE_IS_DECLARED
+typedef struct YYLTYPE
+{
+  int first_line;
+  int first_column;
+  int last_line;
+  int last_column;
+} YYLTYPE;
+# define yyltype YYLTYPE /* obsolescent; will be withdrawn */
+# define YYLTYPE_IS_DECLARED 1
+# define YYLTYPE_IS_TRIVIAL 1
+#endif
+
+extern YYLTYPE yylloc;
 

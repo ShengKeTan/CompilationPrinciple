@@ -1,0 +1,18 @@
+	int i,j;
+	char c;
+	struct a;
+	union b;
+	& q;
+	**f;
+	int fun(int a, float b)
+	{
+	int m;
+	m=a+b;
+	m++;
+	m--;
+	if (a>b) m=a;
+	else m=b;
+	while(a=b)
+	return m;
+	}
+	float x,y;

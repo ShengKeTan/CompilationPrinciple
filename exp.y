@@ -11,10 +11,10 @@ void display(struct Exp *,int);
 %union {
 	int type_int;
 	char type_id[32];
-	struct Exp *pExp;
+	struct Exp *PExp;
 };
 
-%type  <pExp> line exp       /*指定line和exp的语义值是结点指针pExp*/
+%type  <PExp> line exp       /*指定line和exp的语义值是结点指针pExp*/
 %token <type_int> INT        /*指定INT的语义值是type_int，有词法分析得到的数值*/
 %token <type_id> ID          /*指定ID的语义值是type_id，有词法分析得到的标识符字符串*/
 
